@@ -5,7 +5,7 @@
 from time import sleep
 import platform
 
-Error = "TO WORK RUN 'python3 requests.py'"
+Error = "TO WORK - RUN 'python3 request.py'"
 
 line = "---------------------------------------------------------------"
 
@@ -65,7 +65,7 @@ try:
     else:
         connection = True
         print("/\n[+] Connected to the Tor network\n" + line)
-        print("[*] IP Tor network:\n" + adress.text + line)
+        print("[*] IP Tor network:\n" + '[!] ' + adress.text + line)
 
     # Parse site
     finally:
