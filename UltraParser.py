@@ -1,45 +1,29 @@
 """
  CODE BY LightScript
- My GitHub https://github.com/LightScr1pt/python/
+ My GitHub https://github.com/LightScr1pt/
 """
 from time import sleep
 import platform
-import os
+
+Error = "TO WORK RUN 'python3 requests.py'"
 
 line = "---------------------------------------------------------------"
-print(line)
-try:   # Connecting to tor services (only on linux)
-    os.system('apt-get install tor')
-except:
-    Error = True 
-try:   # Connecting to tor services (only on linux)
-    os.system('systemctl start tor.service')
-except:
-    Error = True 
 
 print(line)
-# INSTALLING ALL NEEDS LIBARYS
+stop = False
+
 try:
     from bs4 import BeautifulSoup
-    print('[OK] BeautifulSoup installed')
-except:
-    print('[-] BeautifulSoup not found')
-    os.system('pip3 install bs4')
-    from bs4 import BeautifulSoup
-try:
-    import requests
-    print('[OK] Requests installed')
-except:
-    print('[-] Requests not found')
-    os.system('pip3 install requests')
-    import requests
-try:
     import fake_useragent
-    print('[OK] FakeUseragent installed')
+    import requests
 except:
-    print('[-] FakeUseragent not found')
-    os.system('pip3 install fake_useragent')
-    import fake_useragent
+    print(Error)
+    stop = True
+
+    
+if stop == True:
+    quit
+    
 try:
     print(line +'\n[!] Starting a program')
     print('[!] Your platform ' + platform.platform())
