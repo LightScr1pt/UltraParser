@@ -17,12 +17,13 @@ try:
     import fake_useragent
     import requests
 except:
+    os.system('python3 requests.py')
     print(Error)
     stop = True
 
     
 if stop == True:
-    quit
+    os.system('python3 UltraParser.py')
     
 try:
     print(line +'\n[!] Starting a program')
